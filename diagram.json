@@ -1,0 +1,69 @@
+{
+  "version": 1,
+  "author": "Ramadhan Hartanto",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "board-esp32-devkit-c-v4",
+      "id": "esp",
+      "top": 0,
+      "left": -4.76,
+      "rotate": 90,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-lcd1602",
+      "id": "lcd1",
+      "top": -464,
+      "left": -109.6,
+      "attrs": { "pins": "i2c" }
+    },
+    {
+      "type": "wokwi-membrane-keypad",
+      "id": "keypad1",
+      "top": -491.6,
+      "left": 322.4,
+      "attrs": {}
+    },
+    { "type": "wokwi-led", "id": "led1", "top": 100, "left": -150, "attrs": { "color": "red" } },
+    {
+      "type": "wokwi-led",
+      "id": "led2",
+      "top": 102,
+      "left": -188.2,
+      "attrs": { "color": "green" }
+    },
+    {
+      "type": "wokwi-buzzer",
+      "id": "bz1",
+      "top": 200,
+      "left": -150,
+      "attrs": { "volume": "0.1" }
+    },
+    { "type": "wokwi-servo", "id": "servo1", "top": 200, "left": 200, "attrs": {} }
+  ],
+  "connections": [
+    [ "lcd1:GND", "esp:GND.1", "black", [ "h-38.4", "v144", "h422.4", "v336", "h-277.26" ] ],
+    [ "lcd1:VCC", "esp:3V3", "red", [ "h-28.8", "v124.9", "h384", "v356.71" ] ],
+    [ "lcd1:SDA", "esp:21", "green", [ "h-19.2", "v105.8", "h393.6", "v489.6", "h-190.86" ] ],
+    [ "lcd1:SCL", "esp:22", "blue", [ "h-9.6", "v86.7", "h374.4", "v489.6", "h-152.46" ] ],
+    [ "keypad1:R1", "esp:13", "orange", [ "v38.4", "h-430.86" ] ],
+    [ "keypad1:R2", "esp:12", "gold", [ "v48", "h-421.66" ] ],
+    [ "keypad1:R3", "esp:14", "green", [ "v57.6", "h-421.56" ] ],
+    [ "keypad1:R4", "esp:27", "blue", [ "v67.2", "h-421.46" ] ],
+    [ "keypad1:C1", "esp:26", "purple", [ "v76.8", "h-421.36" ] ],
+    [ "keypad1:C2", "esp:25", "magenta", [ "v86.4", "h-421.26" ] ],
+    [ "keypad1:C3", "esp:33", "#8f4814", [ "v96", "h-421.41" ] ],
+    [ "keypad1:C4", "esp:32", "cyan", [ "v105.6", "h-421.56" ] ],
+    [ "led1:A", "esp:2", "red", [ "v30.8", "h116.54" ] ],
+    [ "led1:C", "esp:GND.2", "black", [ "v40.4", "h260.94" ] ],
+    [ "led2:A", "esp:4", "green", [ "v48", "h173.94" ] ],
+    [ "led2:C", "esp:GND.3", "black", [ "v57.6", "h241.54" ] ],
+    [ "bz1:1", "esp:15", "yellow", [] ],
+    [ "bz1:2", "esp:GND.4", "black", [] ],
+    [ "servo1:PWM", "esp:5", "yellow", [] ],
+    [ "servo1:V+", "esp:3V3", "red", [] ],
+    [ "servo1:GND", "esp:GND.5", "black", [] ]
+  ],
+  "dependencies": {}
+}
